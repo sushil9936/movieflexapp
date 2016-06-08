@@ -4,6 +4,7 @@ This app is a demostratio of grid of posters for popular movies. It is implement
 Unit testing applied using Jasmine and angular-mocks.
 
 Following were the requirements for the app
+
 1. Display a grid of posters for popular movies
     a. Be sure to include the movie’s title somewhere on the card
     Grid is displayed using css style classs hovereffect and overlay which are included in style.css file.
