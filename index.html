@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="pindropModule">
+
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <script src="vendor/jquery-1.11.1.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/ng-infinite-scroll.min.js"></script>
+    <script src="vendor/spin.js"></script>
+    <script src="vendor/angular-spinner.min.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
+    <script src="app/pindropController.js"></script>
+    <script src="app/movieListService.js"></script>
+</head>
+
+<body class="content">
+    
+    <div class="header">
+        <h3>Pindrop  Security UI Test</h3>
+    </div>
+    
+    <div ng-controller="pindropController as pdc" class="container">
+        <!--infinite-scroll directive, getMovies method will be called whenenever scroll reaches bottom of the page -->
+        <div class="movieContainer" infinite-scroll='pdc.getMovies()' infinite-scroll-disabled='pdc.busy' infinite-scroll-distance='0'>
+            <!--Loading spinner turns on when page is waiting for api call to get complete-->
+            <span us-spinner spinner-key="spinner-movieList" spinner-start-active="true">
+            <div class="hovereffect" ng-repeat="movie in pdc.movies">
+                <img class="img-responsive" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="">
+                <div class="overlay">
+                    <h2>{{movie.original_title}}</h2>
+                </div>
+            </div>
+            <!--In order to avoid api call on every single scroll we need to have clearfix div at the bottom of parent div -->
+            <div class="clearfix"></div>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

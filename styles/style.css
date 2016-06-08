@@ -1,0 +1,102 @@
+/* custom css for the page*/
+.content{
+    background-color: black;
+    color: white;
+    top: 0;
+    position: relative;
+}
+.header {
+    background-color:rgb(105, 104, 104);
+    position: fixed; 
+    top: 0px;
+    width: 100%;
+    padding-top:20px;
+    padding-bottom: 20px;
+    z-index: 1030;
+    opacity: 0.5;
+    color:white;
+}
+
+.header h3 {
+    margin-top:0px;
+    margin-bottom: :0px;
+    margin-left: 65px;
+}
+.container .movieContainer{
+    margin-top: 80px;
+}
+.clearfix{
+    clear: both;
+}
+.spinner{
+    position: fixed !important;
+}
+/*Referred from https://miketricking.github.io/dist/*/
+
+/*  
+    this class is used to show each movie tile. width is divided in 25% so that 4 tiles 
+    can be accomodated in parent div.
+*/
+
+.hovereffect {
+  width: 25%;
+  height: 400px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+/*  
+    this class is imposed on each and every tile corresponding to above class hovereffect
+    width is made 100% in order to cover entire movie tile.
+    since we want to put hover effect background color shade is applied.
+*/
+
+.hovereffect .overlay {
+  width:100%;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-color: rgba(75,75,75,0.7);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* 
+    this class is for hover effect on hover on particular movie tile background color should
+    change and opacity is reduced to 0.1 so that brighter posters can be seen
+*/
+
+.hovereffect:hover .overlay {
+  background-color: rgba(48, 152, 157, 0.1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+}
+/* ease-in-out is for transition timing*/
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 24px;
+  padding: 10px;
+  background: transparent;
+  -webkit-transform: translateY(45px); /* for chrome and safari browsers*/
+  -ms-transform: translateY(45px); /* for IE */
+  transform: translateY(45px);  /*transition effect for movie title */
+  -webkit-transition: all 0.4s ease-in-out; /* for chrome and safari browsers*/
+  transition: all 0.4s ease-in-out; 
+}
+/* */
+.hovereffect:hover h2 { /* on hover effect this properties are applied */
+  -webkit-transform: tranlateY(5px); /* for chrome and safari browser*/
+  -ms-transform: translateY(5px); /* for IE */
+  transform: translateY(5px);
+}
